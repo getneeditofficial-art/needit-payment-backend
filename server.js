@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully 🚀");
+});
+
 // Razorpay keys (Dashboard se lo)
 const razorpay = new Razorpay({
   key_id: "rzp_test_SKT6icJlDTrjXI",
@@ -35,4 +39,5 @@ app.post("/createOrder", async (req, res) => {
 // start server
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
+
 });
